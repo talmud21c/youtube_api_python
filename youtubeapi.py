@@ -28,6 +28,8 @@ print(type(get_subscription_list(channel_id)))
 
 
 def get_channel_info(ch_id):
+    info = service.channels().list(part='id, snippet, statistics', id=ch_id).execute()
+
 
 
 
