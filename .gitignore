@@ -130,5 +130,5 @@ dmypy.json
 
 #api_keys
 token files/
-.client_secret.json
-.youtube_api_secret.json
+client_secret.json
+youtube_api_secret.json
