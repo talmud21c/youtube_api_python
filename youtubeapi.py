@@ -25,11 +25,30 @@ def get_subscription_list(user_id):
 
 
 print(type(get_subscription_list(channel_id)))
+print(get_subscription_list(channel_id))
+# 리스트 형태로 출력됨
+ch_list = []
+for i in range(len(get_subscription_list(channel_id))):
+    ch_list.append(get_subscription_list(channel_id)[i])
+
+print(ch_list)
 
 
 def get_channel_info(ch_id):
     info = service.channels().list(part='id, snippet, statistics', id=ch_id).execute()
+    ch_info = [
+        info['items'][0]['snippet']['title'],
+        info['items'][0]['statistics']['subscriberCount'],
+        info['items'][0]['statistics']['viewCount']
+    ]
 
+    return ch_info
+
+
+print(get_channel_info(ch_list[0]))
+print(get_channel_info(ch_list[1]))
+print(get_channel_info(ch_list[2]))
+print(get_channel_info(ch_list[3]))
 
 
 
